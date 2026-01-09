@@ -408,18 +408,39 @@ a.info {
     padding: 20px;
     border: 1px solid var(--backgroundColor);
 }
-.commentNumber {
+
+.dashboardLine > a {
+    padding: 20px;
+    border: 1px solid var(--backgroundColor);
+    display: flex;
+    justify-content: center;
+}
+
+.dashboardLine .commentNumber {
     min-width: 160px;
     width: 160px;
+    display: flex;
+    justify-content: center;
 }
+
 .viewNumber {
-    min-width: 95px;
-    width: 95px;
+    min-width: 105px;
+    width: 105px;
+    display: flex;
+    justify-content: center;
 }
+
 .creationDate {
     min-width: 175px;
     width: 175px;
+    display: flex;
+    justify-content: center;
 }
+
+.titleColumn {
+    font-weight: bold;
+}
+
 
 /** 
  * Footer global de la page.
