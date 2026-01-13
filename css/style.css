@@ -413,26 +413,27 @@ a.info {
     padding: 20px;
     border: 1px solid var(--backgroundColor);
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
 .dashboardLine .commentNumber {
-    min-width: 160px;
-    width: 160px;
+    min-width: 175px;
+    width: 175px;
     display: flex;
     justify-content: center;
 }
 
 .viewNumber {
-    min-width: 105px;
-    width: 105px;
+    min-width: 120px;
+    width: 120px;
     display: flex;
     justify-content: center;
 }
 
 .creationDate {
-    min-width: 175px;
-    width: 175px;
+    min-width: 195px;
+    width: 195px;
     display: flex;
     justify-content: center;
 }
@@ -441,6 +442,9 @@ a.info {
     font-weight: bold;
 }
 
+.sortIcon{
+    margin-left: 10px;
+}
 
 /** 
  * Footer global de la page.
