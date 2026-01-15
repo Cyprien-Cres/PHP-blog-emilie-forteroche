@@ -1,7 +1,7 @@
 <?php /**
  *  Affichage du tableau de bord dans la partie admin.
  * Possibilité de trier les articles par titre, nombre de vues, nombre de commentaires et date de création.
- * */?>s
+ * */?>
 
 <div class="adminMenu">
     <a class="adminBtnMenu <?= ($_GET['action'] ?? '') === 'dashboard' ? 'inactive' : '' ?>" href="index.php?action=admin"><h2>Edition des articles</h2></a>
@@ -10,7 +10,7 @@
 </div>
 
 <div class="dashboard">
-    <div class="dashboardLine">
+    <div class="dashboardRows">
         <a class="title sortable" href="<?= $sortUrls['title'] ?>">
             Titre de l'article
             <?php if ($_GET['sort'] === 'title') : ?>
@@ -37,7 +37,7 @@
         </a>
     </div>
     <?php foreach ($dashboards as $dashboard) : ?>
-        <div class="dashboardLine">
+        <div class="dashboardRows">
             <div class="title">
                 <a href="index.php?action=articleComments&idArticle=<?= $dashboard->getId() ?>">
                     <?= htmlspecialchars($dashboard->getTitle()) ?>

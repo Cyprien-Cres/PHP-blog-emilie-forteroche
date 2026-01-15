@@ -376,40 +376,40 @@ a.info {
 /**
  * Styles du dashboard
  */
-.dashboardLine {
+.dashboardRows {
     display: flex;
     color: white;
 }
 
-.dashboardLine:nth-child(odd) {
+.dashboardRows:nth-child(odd) {
     background-color: var(--commentPaleColor);
 }
 
-.dashboardLine:nth-child(even) {
+.dashboardRows:nth-child(even) {
     background-color: var(--commentColor);
 }
 
-.dashboardLine div {
+.dashboardRows div {
     display: flex;
     align-items: center;
 }
 
-.dashboardLine .title {
+.dashboardRows .title {
     font-weight: bold;
     min-width: 300px;
     width: 300px;
 }
 
-.dashboardLine .content {
+.dashboardRows .content {
     flex-grow: 1;
 }
 
-.dashboardLine > div {
+.dashboardRows > div {
     padding: 20px;
     border: 1px solid var(--backgroundColor);
 }
 
-.dashboardLine > a {
+.dashboardRows > a {
     padding: 20px;
     border: 1px solid var(--backgroundColor);
     display: flex;
@@ -417,7 +417,7 @@ a.info {
     justify-content: center;
 }
 
-.dashboardLine .commentNumber {
+.dashboardRows .commentNumber {
     min-width: 175px;
     width: 175px;
     display: flex;
