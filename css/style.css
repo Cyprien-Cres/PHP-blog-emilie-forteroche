@@ -61,6 +61,14 @@ a {
     color: inherit;
 }
 
+a.h2 {
+    width: 100%;
+    margin: 20px 0;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--headerColor);
+}
+
 /**
  * Styles des formulaires.
  */
@@ -336,6 +344,163 @@ a.info {
     padding: 20px;
     border: 1px solid var(--backgroundColor);
 }
+
+.adminMenu {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+}
+
+.adminBtnMenu {
+    margin-right: 20px;
+}
+
+.inactive {
+    opacity: 0.5;
+}
+
+/**
+ * Styles du menu admin
+ */
+
+.separator {
+    color: #255E33;
+    margin-top: 15px;
+    font-size: 30px;
+}
+
+.dashboardBtnMenu {
+    margin-left: 20px;
+}
+
+/**
+ * Styles du dashboard
+ */
+.dashboardRows {
+    display: flex;
+    color: white;
+}
+
+.dashboardRows:nth-child(odd) {
+    background-color: var(--commentPaleColor);
+}
+
+.dashboardRows:nth-child(even) {
+    background-color: var(--commentColor);
+}
+
+.dashboardRows div {
+    display: flex;
+    align-items: center;
+}
+
+.dashboardRows .title {
+    font-weight: bold;
+    min-width: 300px;
+    width: 300px;
+}
+
+.dashboardRows .content {
+    flex-grow: 1;
+}
+
+.dashboardRows > div {
+    padding: 20px;
+    border: 1px solid var(--backgroundColor);
+}
+
+.dashboardRows > a {
+    padding: 20px;
+    border: 1px solid var(--backgroundColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboardRows .commentNumber {
+    min-width: 175px;
+    width: 175px;
+    display: flex;
+    justify-content: center;
+}
+
+.viewNumber {
+    min-width: 120px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+}
+
+.creationDate {
+    min-width: 195px;
+    width: 195px;
+    display: flex;
+    justify-content: center;
+}
+
+.titleColumn {
+    font-weight: bold;
+}
+
+.sortIcon{
+    margin-left: 10px;
+}
+
+/**
+ * Styles de la page Comment
+ */
+
+.commentsTable {
+    display: flex;
+    color: white;
+    flex-direction: column;
+}
+
+.commentRows:nth-child(odd) {
+    background-color: var(--commentPaleColor);
+}
+
+.commentRows:nth-child(even) {
+    background-color: var(--commentColor);
+}
+
+.commentRows {
+    display: grid;
+    grid-template-columns: 200px 500px 250px 150px;
+}
+
+.commentRows div {
+    display: flex;
+    padding: 20px;
+    border: 1px solid var(--backgroundColor);
+    justify-content: center;
+    align-items: center;
+}
+
+.pseudo{
+    display: flex;
+    align-items: center;
+}
+
+.commentRows .commentContent{
+    display: flex;
+    align-items: center;
+}
+
+.commentRows:nth-child(odd) .deleteComment a {
+    background-color: var(--commentColor); /* Couleur pour lignes impaires */
+}
+
+.commentRows:nth-child(even) .deleteComment a {
+    background-color: var(--commentPaleColor); /* Couleur pour lignes paires */
+}
+
+.return {
+    margin-bottom: 20px;
+}
+
+
+
 
 /** 
  * Footer global de la page.
