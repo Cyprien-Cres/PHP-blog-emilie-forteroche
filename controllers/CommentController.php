@@ -44,4 +44,50 @@ class CommentController
         // On redirige vers la page de l'article.
         Utils::redirect("showArticle", ['id' => $idArticle]);
     }
+
+    /**
+     * Affiche les commentaires d'un article.
+     * @return void
+     */
+    public function showArticleComments(): void
+    {
+        $idArticle = Utils::request('idArticle');
+
+        $articleManager = new ArticleManager();
+        $article = $articleManager->getArticleById($idArticle);
+
+        if (!$article) {
+            throw new Exception("Article non trouvé.");
+        }
+
+        $commentManager = new CommentManager();
+        $comments = $commentManager->getAllCommentsByArticleId($idArticle);
+
+        $view = new View($article->getTitle());
+        $view->render("comments", ['article' => $article, 'comments' => $comments]);
+    }
+
+    /**
+     * Supprime un commentaire.
+     * @return void
+     */
+    public function deleteCommentById(): void
+    {
+        $commentId = (int)($_GET['id'] ?? 0);
+
+        if ($commentId) {
+            $commentManager = new CommentManager();
+            $comment = $commentManager->getCommentById($commentId);
+
+            if ($comment) {
+                $idArticle = $comment->getIdArticle();
+                $commentManager->deleteComment($comment); // Passer l'objet, pas l'ID
+                header("Location: index.php?action=articleComments&idArticle=" . $idArticle);
+                exit;
+            }
+        }
+
+        header("Location: index.php?action=admin");
+        exit;
+    }
 }

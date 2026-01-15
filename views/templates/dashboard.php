@@ -1,3 +1,8 @@
+<?php /**
+ *  Affichage du tableau de bord dans la partie admin.
+ * Possibilité de trier les articles par titre, nombre de vues, nombre de commentaires et date de création.
+ * */?>s
+
 <div class="adminMenu">
     <a class="adminBtnMenu <?= ($_GET['action'] ?? '') === 'dashboard' ? 'inactive' : '' ?>" href="index.php?action=admin"><h2>Edition des articles</h2></a>
     <p class="separator">|</p>
@@ -33,7 +38,11 @@
     </div>
     <?php foreach ($dashboards as $dashboard) : ?>
         <div class="dashboardLine">
-            <div class="title"><?= htmlspecialchars($dashboard->getTitle()) ?></div>
+            <div class="title">
+                <a href="index.php?action=articleComments&idArticle=<?= $dashboard->getId() ?>">
+                    <?= htmlspecialchars($dashboard->getTitle()) ?>
+                </a>
+            </div>
             <div class="viewNumber"><?= $dashboard->getVueNumber() ?></div>
             <div class="commentNumber"><?= $dashboard->getCommentNumber() ?></div>
             <div class="creationDate"><?= Utils::convertDateToFrenchFormat($dashboard->getDateCreation()) ?></div>

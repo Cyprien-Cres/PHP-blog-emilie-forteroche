@@ -1,6 +1,7 @@
 <?php
 class Dashboard extends AbstractEntity
 {
+    protected int $id = -1;
     private string $title = "";
     private int $viewNumber = 0;
     private int $commentNumber = 0;
@@ -13,15 +14,16 @@ class Dashboard extends AbstractEntity
      * @param int $viewNumber
      * @param int $commentNumber
      * @param DateTime $dateCreation
+     * @param int $id
      */
-
-    public function __construct($title, $viewNumber, $commentNumber, $dateCreation)
-    {
-        $this->title = $title;
-        $this->viewNumber = $viewNumber;
-        $this->commentNumber = $commentNumber;
-        $this->dateCreation = $dateCreation;
-    }
+    public function __construct($id = -1, $title, $viewNumber, $commentNumber, $dateCreation)
+{
+    $this->id = $id;
+    $this->title = $title;
+    $this->viewNumber = $viewNumber;
+    $this->commentNumber = $commentNumber;
+    $this->dateCreation = $dateCreation;
+}
 
     /**
      * Getter pour le titre de l'article.

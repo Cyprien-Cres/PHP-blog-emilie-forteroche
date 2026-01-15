@@ -1,4 +1,7 @@
 <?php
+/*
+ * Récupère les articles pour le Dashboard
+ */
 
 class DashboardManager extends AbstractEntityManager
 {
@@ -12,13 +15,14 @@ class DashboardManager extends AbstractEntityManager
         $articles = [];
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             $dashboard = new Dashboard(
+                $row['id'],
                 $row['title'],
                 $row['views'],
                 $row['commentNumber'],
                 new DateTime($row['date_creation'])
             );
-            $dashboards[] = $dashboard;
+            $articles[] = $dashboard;
         }
-        return $dashboards;
+        return $articles;
     }
 }
